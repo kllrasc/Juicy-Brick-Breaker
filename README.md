@@ -6,8 +6,8 @@ Description
 
 
 ## Implementation
-
-Which features you included
+Brick to slowly scale down in size when hit
+Ball to rotate through the colors of the rainbow until it dies
 
 
 ## References
