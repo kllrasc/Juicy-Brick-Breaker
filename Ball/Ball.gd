@@ -5,11 +5,20 @@ var max_speed = 600.0
 var speed_multiplier = 1.0
 var accelerate = false
 
+
 var released = true
 
 var initial_velocity = Vector2.ZERO
 
+
 func _ready():
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color.RED, 1)
+	tween.tween_property(self, "modulate", Color.ORANGE, 1)
+	tween.tween_property(self, "modulate", Color.YELLOW, 1)
+	tween.tween_property(self, "modulate", Color.GREEN, 1)
+	tween.tween_property(self, "modulate", Color.BLUE, 1)
+	tween.tween_property(self, "modulate", Color.PURPLE, 1)
 	contact_monitor = true
 	max_contacts_reported = 8
 	if Global.level < 0 or Global.level >= len(Levels.levels):
@@ -24,6 +33,7 @@ func _on_Ball_body_entered(body):
 	if body.has_method("hit"):
 		body.hit(self)
 		accelerate = true	
+	
 
 func _input(event):
 	if not released and event.is_action_pressed("release"):

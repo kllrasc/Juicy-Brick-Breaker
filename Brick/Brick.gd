@@ -15,7 +15,9 @@ func _physics_process(_delta):
 		queue_free()
 
 func hit(_ball):
-	die()
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(), 1)
+	
 
 func die():
 	dying = true
@@ -32,3 +34,4 @@ func die():
 			var powerup = Powerup.instantiate()
 			powerup.position = position
 			Powerup_Container.call_deferred("add_child", powerup)
+			

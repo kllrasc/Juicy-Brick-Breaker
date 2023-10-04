@@ -7,3 +7,4 @@ func check_level():
 			count += 1
 	if count == 0:
 		Global.next_level()
+	
