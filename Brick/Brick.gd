@@ -17,6 +17,10 @@ func _physics_process(_delta):
 func hit(_ball):
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(), 1)
+	$ColorRect.color = Color8(201,42,42,255)
+	var Brick_sound = get_node_or_null("/root/Game/Brick_Sound")
+	if Brick_sound != null:
+		Brick_sound.play()
 	
 
 func die():

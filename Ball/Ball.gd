@@ -4,7 +4,7 @@ var min_speed = 100.0
 var max_speed = 600.0
 var speed_multiplier = 1.0
 var accelerate = false
-
+var h_rotate = 0
 
 var released = true
 
@@ -64,6 +64,16 @@ func change_size(s):
 
 func change_speed(s):
 	speed_multiplier = s
+
+func comet():
+	h_rotate = wrapf(h_rotate+0.01, 0, 1)
+	var comet_container = get_node_or_null("/root/Game/Comet_Container")
+	if comet_container != null:
+		var sprite = $Images/Sprite.duplicate()
+		sprite.global_position = global_position
+		sprite.modulate.s = 0.6
+		sprite.modulate.h = h_rotate
+		comet_container.add_child(sprite)
 
 func die():
 	queue_free()

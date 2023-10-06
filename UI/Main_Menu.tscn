@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ei3ny6s8bla5"]
+[gd_scene load_steps=11 format=3 uid="uid://ei3ny6s8bla5"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1"]
 [ext_resource type="Theme" uid="uid://csi1h5tk6pocm" path="res://UI/NewTheme.tres" id="2_7wmd3"]
+[ext_resource type="AudioStream" uid="uid://bfllvblrv1pc3" path="res://Assets/Untitled score.mp3" id="3_0imq8"]
 
 [sub_resource type="FontFile" id="FontFile_ilcij"]
 cache/0/16/0/ascent = 0.0
@@ -91,6 +92,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1far5")
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0imq8")
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
