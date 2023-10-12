@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmwf8wjdir6y5"]
+[gd_scene load_steps=6 format=3 uid="uid://dmwf8wjdir6y5"]
 
 [ext_resource type="Script" path="res://Paddle/Paddle.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bcej2ixsw7uqb" path="res://Paddle/lives.png" id="2_ys8es"]
+[ext_resource type="Texture2D" uid="uid://by80hf5h3q4uc" path="res://Assets/eye.png" id="3_cq8lj"]
+[ext_resource type="Texture2D" uid="uid://c01avob0oax5t" path="res://Assets/pupil.png" id="4_3kgws"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(100, 20)
@@ -23,3 +25,23 @@ shape = SubResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ys8es")
+
+[node name="eye1" type="Sprite2D" parent="."]
+position = Vector2(-31, -5)
+texture = ExtResource("3_cq8lj")
+
+[node name="pupil" type="Node2D" parent="eye1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="eye1/pupil"]
+position = Vector2(-1, -7)
+texture = ExtResource("4_3kgws")
+
+[node name="eye2" type="Sprite2D" parent="."]
+position = Vector2(31, -6)
+texture = ExtResource("3_cq8lj")
+
+[node name="pupil2" type="Node2D" parent="eye2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="eye2/pupil2"]
+position = Vector2(0, -7)
+texture = ExtResource("4_3kgws")

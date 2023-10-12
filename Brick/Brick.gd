@@ -5,13 +5,17 @@ var new_position = Vector2.ZERO
 var dying = false
 
 var powerup_prob = 0.1
+var tween
 
 func _ready():
 	randomize()
-	position = new_position
+	position.x = new_position.x
+	position.y = -100
+	tween = create_tween()
+	tween.tween_property(self, "position", new_position, 0.5 + randf()*2).set_trans(Tween.TRANS_BOUNCE)
 
 func _physics_process(_delta):
-	if dying:
+	if dying and not $Confetti.emitting and not tween:
 		queue_free()
 
 func hit(_ball):
@@ -38,4 +42,4 @@ func die():
 			var powerup = Powerup.instantiate()
 			powerup.position = position
 			Powerup_Container.call_deferred("add_child", powerup)
-			
+	

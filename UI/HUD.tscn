@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://do7pdpjxteg8e"]
+[gd_scene load_steps=3 format=3 uid="uid://do7pdpjxteg8e"]
 
 [ext_resource type="Script" path="res://UI/HUD.gd" id="1"]
+[ext_resource type="Theme" uid="uid://csi1h5tk6pocm" path="res://UI/NewTheme.tres" id="2_1iaw2"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -16,12 +17,13 @@ layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0, 0, 0, 0.25098)
+theme = ExtResource("2_1iaw2")
+color = Color(0.705882, 0.14902, 0.67451, 1)
 
 [node name="Background2" type="ColorRect" parent="."]
 layout_mode = 0
 anchor_right = 1.0
-color = Color(0, 0, 0, 0.25098)
+color = Color(0.847059, 0, 0.870588, 0.827451)
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
